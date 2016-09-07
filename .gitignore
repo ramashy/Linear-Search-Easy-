@@ -1,0 +1,42 @@
+/*
+Developer - Shyanaka Rama
+Demostration of Linear Search another version
+*/
+#include <iostream>
+using namespace std;
+int search_func(int[], int, int);
+
+int main()
+{
+    int a[] = {2,4,6,8,10,12};
+    int x;
+    
+    
+    cout << "Enter the number you want to search : "<<endl;
+    cin >> x;
+    
+    int final;
+    final = search_func(a, 6, x);
+    
+    if(final>=0)
+    {
+        cout<<"The number you entered "<<a[final]<<" in the list in "<< final+1 <<endl;
+    }
+    else
+        cout << "The number you entered "<<x<<" was not found"<<endl;
+    return 0;
+    
+}
+
+int search_func(int array[], int elementnumber, int number)
+{
+    for(int count=0; count < elementnumber; count++)
+    {
+        if(number == array[count])
+        {
+            return count;
+            
+        }
+    }
+    return -1;
+}
